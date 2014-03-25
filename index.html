@@ -32,6 +32,7 @@
       <div class="links">
         <ul>
 <li><a href='#allcolors'>allcolors</a></li>
+<li><a href='#baconify'>baconify</a></li>
 <li><a href='#cachebuster'>cachebuster</a></li>
 <li><a href='#console-save'>console-save</a></li>
 <li><a href='#cssprettifier'>cssprettifier</a></li>
@@ -48,6 +49,7 @@
 <li><a href='#plainforms'>plainforms</a></li>
 <li><a href='#querystringvalues'>querystringvalues</a></li>
 <li><a href='#showheaders'>showheaders</a></li>
+<li><a href='#underscorify'>underscorify</a></li>
 <li><a href='#viewcookies'>viewcookies</a></li>
 <li><a href='#wrapelement'>wrapelement</a></li>
         </ul>
@@ -159,6 +161,30 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
   <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">(</span><span class="s2">&quot;All colors used in elements on the page&quot;</span><span class="p">);</span>
+
+<span class="p">})();</span>
+</pre></div>
+</div><div class='snippet-wrapper' id='baconify'><div class='snippet'><h3><a href='https://github.com/bgrins/devtools-snippets/tree/master/snippets/baconify/baconify.js'>baconify.js</a> <a href='#baconify'>#</a> &nbsp; <small style='float:right'><a href='snippets/baconify/baconify.js'>(view raw)</a></small></h3>
+
+<p>Includes Bacon.js onto a page if it is not yet included.</p>
+
+<p><a href="snippets/baconify/baconify.js"><img src="snippets/baconify/baconify.png" alt="snippets/baconify/baconify" /></a></p>
+</div><div class="highlight"><pre><span class="c1">// baconify.js</span>
+<span class="c1">// https://github.com/georgeosddev/devtools-snippets</span>
+<span class="c1">// Add Bacon.js to any page that does not have it already.</span>
+
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">window</span><span class="p">.</span><span class="nx">Bacon</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.8/bacon.min.js&#39;</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Baconjs loaded!&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;` Bacon` already in use&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
 
 <span class="p">})();</span>
 </pre></div>
@@ -927,6 +953,32 @@ for <a href="http://developer.chrome.com/extensions/i18n.html">i18n</a> of Chrom
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">);</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">tab</span><span class="p">);</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">(</span><span class="s2">&quot;Request Headers&quot;</span><span class="p">);</span>
+
+<span class="p">})();</span>
+</pre></div>
+</div><div class='snippet-wrapper' id='underscorify'><div class='snippet'><h3><a href='https://github.com/bgrins/devtools-snippets/tree/master/snippets/underscorify/underscorify.js'>underscorify.js</a> <a href='#underscorify'>#</a> &nbsp; <small style='float:right'><a href='snippets/underscorify/underscorify.js'>(view raw)</a></small></h3>
+
+<p>Includes Underscore.js onto a page if it is not yet included.</p>
+
+<p><a href="snippets/underscorify/underscorify.js"><img src="snippets/underscorify/underscorify.png" alt="snippets/underscorify/underscorify" /></a></p>
+</div><div class="highlight"><pre><span class="c1">// underscorify.js</span>
+<span class="c1">// https://github.com/georgeosddev/devtools-snippets</span>
+<span class="c1">// Add Underscore to any page that does not have it already.</span>
+
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="kd">var</span> <span class="nx">_InUse</span> <span class="o">=</span> <span class="o">!!</span><span class="nb">window</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js&#39;</span><span class="p">);</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Underscore loaded!&#39;</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="nx">_InUse</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">underscore</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;`_` already in use; use `underscore`&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
 
 <span class="p">})();</span>
 </pre></div>
